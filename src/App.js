@@ -6,6 +6,7 @@ import VideoList from './components/VideoList'
 import VideoItem from './components/VideoItem'
 import youtube from './api/youtube'
 
+
 class App extends React.Component {
   state = {
     videos: [],
@@ -13,27 +14,29 @@ class App extends React.Component {
   }
 
   handleSubmit = async (termFromSearchBar) => {
+const KEY = process.env.YOUTUBE_KEY;
+
     const response = await youtube.get('/search', {
-      params: {
-        q: termFromSearchBar
-      }
+        params: {
+          part: 'snippet',
+          maxResults: 5,
+          key: KEY,
+          q: termFromSearchBar
+        }
     })
     this.setState({
-      videos: response.data.items
+        videos: response.data.items
     })
-    console.log(this.state)
-  }
-
-  handleVideoSelect = (video) => {
-    this.setState({ selectedVideo: video })
-  }
+};
+handleVideoSelect = (video) => {
+    this.setState({selectedVideo: video})
+}
 
   render() {
     return (
       <div className='container' style={{ padding: '10px' }}>
         <NavBar handleSubmit={this.handleSubmit}/>
-        <VideoItem />
-        <VideoList />
+        <VideoList handleVideoSelect={this.handleVideoSelect} videos={this.state.videos}/>
       </div>
     )
   }
