@@ -4,7 +4,12 @@
 }
 
 .ant-menu-horizontal > .ant-menu-item:hover, .ant-menu-horizontal > .ant-menu-item-active, .ant-menu-horizontal > .ant-menu-item-selected {
-  color: black;
+  color: #ababab;
   border-bottom: 2px solid red;
+}
 
+.ant-btn-primary {
+  color: #ffffff;
+  background-color: #ababab;
+  border-color: #ababab;
 }
