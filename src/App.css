@@ -3,9 +3,8 @@
   color: red;
 }
 
-.ant-menu-horizontal > .ant-menu-item:hover, .ant-menu-horizontal > .ant-menu-item-active {
+.ant-menu-horizontal > .ant-menu-item:hover, .ant-menu-horizontal > .ant-menu-item-active, .ant-menu-horizontal > .ant-menu-item-selected {
   color: black;
   border-bottom: 2px solid red;
-  border-top: 2px solid black
 
 }
