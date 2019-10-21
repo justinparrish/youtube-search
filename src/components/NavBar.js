@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import 'antd/dist/antd.css';
+import 'antd/dist/antd.css'
 import '../App.css'
 import { Row, Col, PageHeader, Input, Menu, Icon } from 'antd'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
@@ -26,7 +26,6 @@ export default class NavBar extends Component {
                     <Menu.Item key='account'><Icon type="setting" />Account</Menu.Item>
                 </Menu>
                     </Col>
-
                 </Row>
             </header>
         )
