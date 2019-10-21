@@ -3,6 +3,7 @@ import 'antd/dist/antd.css';
 import { Row, Col } from 'antd'
 import NavBar from './components/NavBar'
 import VideoList from './components/VideoList'
+import VideoItem from './components/VideoItem'
 import youtube from './api/youtube'
 
 class App extends React.Component {
@@ -31,6 +32,7 @@ class App extends React.Component {
     return (
       <div className='container' style={{ padding: '10px' }}>
         <NavBar handleSubmit={this.handleSubmit}/>
+        <VideoItem />
         <VideoList />
       </div>
     )
