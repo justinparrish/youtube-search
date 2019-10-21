@@ -13,15 +13,29 @@ export default class SearchBar extends Component {
         evnt.preventDefault()
         this.setState({term: value})
 
-        console.log(this.state.term)
+        // console.log(this.state.term)
         
         this.props.handleSearchBarSubmit(this.state.term)
 
     }
 
+    handleInput = (evnt) => {
+        this.setState({term: evnt.target.value})
+    }
+
+    handleSubmit = (evnt) => {
+        evnt.preventDefault()
+
+        this.props.handleSearchBarSubmit(this.state.term)
+    }
+
     render() {
         return (
-            <Search onSearch={this.handleSearch} placeholder="input search text" enterButton />
+            // <Search onSearch={this.handleSearch} placeholder="input search text" enterButton />
+            <form onSubmit={this.handleSubmit}>
+                <input type='text' placeholder='input search text here' onChange={this.handleInput} />
+                <input type='submit' value='search' />
+            </form>
         )
     }
 }
