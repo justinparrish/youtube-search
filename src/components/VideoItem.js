@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { Row, Col, List, Avatar, Icon } from 'antd'
-import youtube from '../api/youtube'
+import { List, Icon } from 'antd'
 
 const IconText = ({ type, text }) => (
     <span>
@@ -8,8 +7,7 @@ const IconText = ({ type, text }) => (
       {text}
     </span>
   );
-
-
+  
 const VideoItem  = ({video, handleVideoSelect}) => {
          return (
             <List.Item 
@@ -28,7 +26,7 @@ const VideoItem  = ({video, handleVideoSelect}) => {
                 />
             } >
             <List.Item.Meta 
-                avatar={<Avatar src='https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'/>}
+                avatar={<Icon type="video-camera" />}
                 title={video.snippet.title}
                 description={video.snippet.description}
             />    

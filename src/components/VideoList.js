@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
 import 'antd/dist/antd.css'
-import { Row, Col, List, Avatar, Icon } from 'antd'
+import {List } from 'antd'
 import VideoItem from './VideoItem'
 
 
 const VideoList = ({ videos, handleVideoSelect }) => {
   const renderedVideos = videos.map((video) => {
     return <VideoItem key={video.id.videoId} video={video} handleVideoSelect={handleVideoSelect} />
-    console.log(video.id);
   });
   return (
       <List itemLayout='vertical' size='large'
@@ -15,7 +14,7 @@ const VideoList = ({ videos, handleVideoSelect }) => {
           onChange: page => {
             console.log(page)
           },
-          pageSize: 5
+          pageSize: 4
         }}
         footer={
           <div>
