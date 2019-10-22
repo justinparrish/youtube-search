@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Row, Col, List, Avatar, Icon } from 'antd'
+import youtube from '../api/youtube'
 
 const IconText = ({ type, text }) => (
     <span>
@@ -7,6 +8,8 @@ const IconText = ({ type, text }) => (
       {text}
     </span>
   );
+
+
 
 const VideoItem  = ({video, handleVideoSelect}) => {
          return (
@@ -17,7 +20,7 @@ const VideoItem  = ({video, handleVideoSelect}) => {
                     },
                     pageSize: 3
                 }} 
-                dataSource={video}
+                dataSource={youtube}
                 footer={
                     <div>
                         <b>List of Videos</b>
