@@ -20,11 +20,12 @@ const KEY = process.env.YOUTUBE_KEY;
     const response = await youtube.get('/search', {
         params: {
           part: 'snippet',
-          maxResults: 5,
-          key: 'AIzaSyAFUNYmE1gfydRFrlb3Q05gXlPSgQmiY6I',
+          maxResults: 20,
+          key: KEY,
           q: termFromSearchBar
         }
     })
+    console.log(response);
     this.setState({
         videos: response.data.items
     })
@@ -37,7 +38,7 @@ handleVideoSelect = (video) => {
     return (
       <div className='container' style={{ padding: '10px' }}>
         <NavBar handleSubmit={this.handleSubmit}/>
-        <VideoItem handleVideoSelect={this.handleVideoSelect} videos={this.state.videos}/>
+        <VideoList handleVideoSelect={this.handleVideoSelect} videos={this.state.videos}/>
       </div>
     )
   }
