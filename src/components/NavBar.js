@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import 'antd/dist/antd.css'
 import '../App.css'
 import { Row, Col, PageHeader, Input, Menu, Icon } from 'antd'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import SearchBar from './SearchBar'
 
 
